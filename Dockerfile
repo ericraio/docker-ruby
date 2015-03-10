@@ -14,7 +14,7 @@ ENV RUBY_MAJOR 2.1
 RUN apt-get update -qq
 RUN apt-get upgrade -qq -y
 
-RUN apt-get install -y wget curl git git-core build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev
+RUN apt-get install -y wget curl git git-core build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev rsyslog
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
