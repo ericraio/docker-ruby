@@ -14,7 +14,7 @@ ENV RUBY_MAJOR 2.1
 RUN apt-get update -qq
 RUN apt-get upgrade -qq -y
 
-RUN apt-get install -y wget curl git git-core build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev rsyslog
+RUN apt-get install -y wget curl git git-core build-essential zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev cron rsyslog
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -30,4 +30,3 @@ RUN cd ruby-2.1.5/ && ./configure && make && make install
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install bundler
 RUN gem install foreman
-
