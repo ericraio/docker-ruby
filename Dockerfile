@@ -4,8 +4,8 @@ MAINTAINER Eric Raio <eric@car.social> (@ericraio)
 RUN locale-gen --no-purge en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
-ENV RUBY_VERSION 2.1.5
-ENV RUBY_MAJOR 2.1
+ENV RUBY_VERSION 2.2.2
+ENV RUBY_MAJOR 2.2
 
 #################################
 # native libs
@@ -23,9 +23,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # install ruby
 #################################
 
-RUN wget -O ruby-2.1.5.tar.gz http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz
-RUN tar -xzf ruby-2.1.5.tar.gz
-RUN cd ruby-2.1.5/ && ./configure && make && make install
+RUN wget -O ruby-2.2.2.tar.gz http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.2.2.tar.gz
+RUN tar -xzf ruby-2.2.2.tar.gz
+RUN cd ruby-2.2.2/ && ./configure && make && make install
 
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install bundler
