@@ -25,7 +25,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN wget -O ruby-2.2.2.tar.gz http://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
 RUN tar -xzf ruby-2.2.2.tar.gz
-RUN cd ruby-2.2.2/ && ./configure –with-jemalloc && make && make install
+RUN cd ruby-2.2.2/ && ./configure --with-jemalloc && make && make install
 
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install bundler
