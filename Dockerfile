@@ -6,6 +6,7 @@ ENV LC_ALL en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 ENV RUBY_VERSION 2.2.2
 ENV RUBY_MAJOR 2.2
+ENV RUBYOPT "-r openssl"
 
 #################################
 # native libs
