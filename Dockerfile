@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Eric Raio <eric@car.social> (@ericraio)
+MAINTAINER Eric Raio <ericraio@gmail.com> (@ericraio)
 
 RUN locale-gen --no-purge en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
