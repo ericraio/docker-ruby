@@ -24,7 +24,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #################################
 
 RUN locale-gen --no-purge en_US.UTF-8
-RUN cd /tmp && wget -O ruby-2.6.3.tar.gz http://ftp.ruby-lang.org/pub/ruby/2.6/ruby-2.6.3.tar.gz
+RUN wget -O ruby-2.6.3.tar.gz http://ftp.ruby-lang.org/pub/ruby/2.6/ruby-2.6.3.tar.gz
 RUN tar -xzf ruby-2.6.3.tar.gz
 RUN cd ruby-2.6.3/ && ./configure --with-jemalloc && make && make install
 
