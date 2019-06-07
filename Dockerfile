@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER Eric Raio <ericraio@gmail.com> (@ericraio)
+MAINTAINER Eric Raio <eric@ericraio.com> (@ericraio)
 
 RUN locale-gen --no-purge en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
@@ -15,7 +15,11 @@ ENV RUBYOPT "-r openssl"
 RUN apt-get update -qq
 RUN apt-get upgrade -qq -y
 
-RUN apt-get install -y wget curl git git-core build-essential libjemalloc-dev zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev cron rsyslog libcurl3 libcurl3-gnutls libcurl4-openssl-dev pkg-config automake autoconf libtool
+RUN apt-get install -y software-properties-common wget curl git git-core build-essential libjemalloc-dev zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev cron rsyslog libcurl3 libcurl3-gnutls libcurl4-openssl-dev pkg-config automake autoconf libtool
+
+RUN add-apt-repository ppa:eugenesan/ppa && apt-get update -qq
+
+RUN apt-get install -y brotli
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
