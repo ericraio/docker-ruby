@@ -14,7 +14,7 @@ ENV RUBYOPT "-r openssl"
 RUN apt-get update -qq
 RUN apt-get upgrade -qq -y
 
-RUN apt-get install -y software-properties-common wget curl git git-core build-essential libjemalloc-dev locales zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev cron rsyslog libcurl3 libcurl3-gnutls libcurl4-openssl-dev pkg-config automake autoconf libtool
+RUN apt-get install -y software-properties-common wget curl git git-core build-essential libjemalloc-dev locales zlib1g-dev libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev cron rsyslog curl libcurl4-openssl-dev pkg-config automake autoconf libtool
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
