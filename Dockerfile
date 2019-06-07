@@ -4,8 +4,8 @@ MAINTAINER Eric Raio <ericraio@gmail.com> (@ericraio)
 RUN locale-gen --no-purge en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
-ENV RUBY_VERSION 2.2.2
-ENV RUBY_MAJOR 2.2
+ENV RUBY_VERSION 2.6.3
+ENV RUBY_MAJOR 2.6
 ENV RUBYOPT "-r openssl"
 
 #################################
@@ -24,9 +24,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # install ruby
 #################################
 
-RUN wget -O ruby-2.2.2.tar.gz http://ftp.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
-RUN tar -xzf ruby-2.2.2.tar.gz
-RUN cd ruby-2.2.2/ && ./configure --with-jemalloc && make && make install
+RUN wget -O ruby-2.6.3.tar.gz http://ftp.ruby-lang.org/pub/ruby/2.6/ruby-2.6.3.tar.gz
+RUN tar -xzf ruby-2.6.3.tar.gz
+RUN cd ruby-2.6.3/ && ./configure --with-jemalloc && make && make install
 
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 RUN gem install bundler
