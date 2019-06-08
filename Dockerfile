@@ -22,15 +22,18 @@ RUN set -ex \
 	&& apk add --update alpine-sdk \
 	&& apk add --no-cache --virtual .ruby-builddeps \
 		autoconf \
+		bash \
 		bison \
 		bzip2 \
 		bzip2-dev \
+		build-base \
 		ca-certificates \
 		coreutils \
 		dpkg-dev dpkg \
 		gcc \
 		gdbm-dev \
 		glib-dev \
+		jemalloc-dev \
 		libc-dev \
 		libffi-dev \
 		libxml2-dev \
