@@ -31,6 +31,7 @@ RUN set -ex \
 		coreutils \
 		dpkg-dev dpkg \
 		gcc \
+		git \
 		gdbm-dev \
 		glib-dev \
 		libc-dev \
