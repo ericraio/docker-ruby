@@ -19,6 +19,7 @@ ENV RUBY_DOWNLOAD_SHA256 11a83f85c03d3f0fc9b8a9b6cad1b2674f26c5aaa43ba858d4b0fcc
 # readline-dev vs libedit-dev: https://bugs.ruby-lang.org/issues/11869 and https://github.com/docker-library/ruby/issues/75
 RUN set -ex \
 	\
+	&& apk add --update alpine-sdk \
 	&& apk add --no-cache --virtual .ruby-builddeps \
 		autoconf \
 		bison \
