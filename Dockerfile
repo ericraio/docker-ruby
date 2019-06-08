@@ -84,6 +84,7 @@ RUN set -ex \
 	&& ./configure \
 		--build="$gnuArch" \
 		--disable-install-doc \
+		--with-jemalloc \
 		--enable-shared \
 	&& make -j "$(nproc)" \
 	&& make install \
