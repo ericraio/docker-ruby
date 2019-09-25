@@ -50,6 +50,7 @@ RUN set -ex \
 		xz \
 		yaml-dev \
 		zlib-dev \
+		chromium-chromedriver \
 	\
 	&& wget -O ruby.tar.xz "https://cache.ruby-lang.org/pub/ruby/${RUBY_MAJOR%-rc}/ruby-$RUBY_VERSION.tar.xz" \
 	&& echo "$RUBY_DOWNLOAD_SHA256 *ruby.tar.xz" | sha256sum -c - \
