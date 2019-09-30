@@ -29,7 +29,7 @@ RUN \
     clang \
     curl \
     git \
-    llvm4 \
+    llvm8 \
     ninja \
     python \
     tar \
@@ -37,7 +37,7 @@ RUN \
 
   # Two quick fixes: we need the LLVM tooling in $PATH, and we
   # also have to use gold instead of ld.
-  && PATH=$PATH:/usr/lib/llvm4/bin \
+  && PATH=$PATH:/usr/lib/llvm8/bin \
   && cp -f /usr/bin/ld.gold /usr/bin/ld \
 
   # Clone and build gn
